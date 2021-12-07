@@ -21,7 +21,6 @@ public class GamePanel extends JPanel implements MouseListener, ActionListener{
 	Bola player1;
 	Garis jalur;
 	GameArea box;
-	Timer timer = new Timer(0, this);
 
 	public GamePanel(int width, int height) {
 		this.areaWidth = width;
