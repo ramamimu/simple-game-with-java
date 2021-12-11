@@ -72,11 +72,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		line = new Line(width, 10, 0, 330, Color.green);
 
 		player1 = new Bola(Color.GRAY, areaWidth/2, positionLineY, areaWidth, areaHeight);
-//		this.add(player1);
 
 		background = Toolkit.getDefaultToolkit().getImage("\\bgGame.png");
-//		jalur= new Garis(areaWidth, areaHeight, blueTeal);
-//		this.add(jalur);
 		
 		this.addKeyListener(this);
 		this.setFocusable(true);
@@ -123,19 +120,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				public void run() {
 					while (true) {
 						REFRESH_RATE += 0.01;
-//						speed += 1;
-//						speedSmallBox += 1;
-//						float[][] ballPosition = {{ball2.x, ball2.y, ball2.radius},{ball3.x,ball3.y, ball3.radius}};
-//						float[][] ballPosition2 = {{ball.x, ball.y, ball.radius},{ball3.x,ball3.y, ball3.radius}};
-//						float[][] ballPosition3 = {{ball.x, ball.y, ball.radius},{ball2.x, ball2.y, ball2.radius}};
-						
-//						ball.collide(box, ballPosition);
-//						ball2.collide(box, ballPosition2);
-//						ball3.collide(box, ballPosition3);
-//						textBall = "Bola biru berada di x = " + (int)ball.x + ", y = " + (int)ball.y;
-//						textBall2 = "Bola merah berada di x = " + (int)ball2.x + ", y = " +(int)ball2.y;
-//						textBall3 = "Bola kuning berada di x = " + (int)ball3.x + ", y = " +(int)ball3.y;
-//						triangle.collide(box);
 						for(int i =0 ; i< triangleArray.size(); i++) {
 							triangleArray.get(i).collide(box);
 						}
@@ -146,7 +130,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 						for(int i =0 ; i< coinList.size(); i++) {
 							coinList.get(i).collide(box);
 						}
-//						coin.collide();
 						
 						repaint();
 						try {
@@ -163,9 +146,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			box.draw(g);
 			g.drawImage(background, 0, 0, null);
 			line.draw(g);
-//			jalur.draw(g);
-//			coin.draw(g);
-//			coin
 			if(coinList.get(coinList.size()-1).positionX > randomNumber(2000) + randomNumber(1000)) {
 				coinList.add(addCoin());
 			}
@@ -198,7 +178,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				if(triangleArray.get(i).positionX >= 640+740) {					
 					triangleArray.remove(i);
 				}
-//				player1.collide(triangleArray.get(i), 0);
 				System.out.printf("%d jumlah array\n", triangleArray.size());
 				triangleArray.get(i).draw(g);
 			}
@@ -218,7 +197,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				if(triangleSmall.get(i).width <-300) {					
 					triangleSmall.remove(i);
 				}
-//				player1.collide(triangleSmall.get(i), 1);
 				triangleSmall.get(i).draw(g);
 			}
 			player1.collide(triangleArray, 0);
